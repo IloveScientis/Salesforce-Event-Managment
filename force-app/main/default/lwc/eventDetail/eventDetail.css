@@ -1,0 +1,5 @@
+/* .slds-table--bordered tbody td, .slds-table--bordered tbody th, .slds-table_bordered tbody td, .slds-table_bordered tbody th{
+    content: counter(none) !important ;
+    display: none !important ;
+} */
+
