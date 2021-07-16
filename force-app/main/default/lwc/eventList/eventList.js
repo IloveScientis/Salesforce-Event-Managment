@@ -51,14 +51,14 @@ export default class EventList extends LightningElement {
     connectedCallback() {
       this.upcomingEventsFromApex();
     }
-  //   renderedCallback() {
-  //     const style = document.createElement('style');
-  //     style.innerText = `.slds-truncate {      
-  //       overflow: visible;
+    renderedCallback() {
+      const style = document.createElement('style');
+      style.innerText = `.slds-truncate {      
+        overflow: visible;
      
-  //     }`;
-  //     this.template.querySelector('lightning-datatable').appendChild(style);
-  // }
+      }`;
+      this.template.querySelector('lightning-datatable').appendChild(style);
+  }
     upcomingEventsFromApex() {
       upcomingEvents()
         .then((data) => {
@@ -75,7 +75,7 @@ export default class EventList extends LightningElement {
           });
   
           this.result = data;
-          this.recordsToDisplay = data;
+          this.recordToDisplay = data;
           window.console.log('recordsToDisplay '+ JSON.stringify(this.recordsToDisplay));
           window.console.log('Result '+ JSON.stringify(this.result));
           
@@ -95,12 +95,12 @@ export default class EventList extends LightningElement {
         return record.Name__c.toLowerCase().includes(keyword.toLowerCase()); // Event - event
         // Tst - tst
       });
-      window.console.log("filteredEvents in Search"+filteredEvents);
+      window.console.log("filteredEvents in Search"+ JSON.stringify(filteredEvents));
       if (keyword && keyword.length >= 2) {
-        this.recordsToDisplay = filteredEvents;
+        this.recordToDisplay = filteredEvents;
         window.console.log("recordsToDisplay in search "+this.recordToDisplay);
       } else {
-        this.recordsToDisplay = this.result;
+        this.recordToDisplay = this.result;
       }
     }
 
