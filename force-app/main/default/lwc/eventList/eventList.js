@@ -45,6 +45,7 @@ const columns = [
 export default class EventList extends LightningElement {
     columnsList= columns;
     error;
+    startdattime;
     @track recordToDisplay;
     @track result;
      
@@ -59,6 +60,7 @@ export default class EventList extends LightningElement {
       }`;
       this.template.querySelector('lightning-datatable').appendChild(style);
   }
+
     upcomingEventsFromApex() {
       upcomingEvents()
         .then((data) => {
@@ -102,6 +104,16 @@ export default class EventList extends LightningElement {
       } else {
         this.recordToDisplay = this.result;
       }
+    }
+    handleStartTime(event){
+      let valuestartdatetime= event.target.value;
+      window.console.log("handleStarttime - valuestartdatetime "+valuestartdatetime);
+      let filterRecordEvent = this.result.filter((record,index, arrayobject) => {
+        return record.Start_DateTime__c >= valuestartdatetime;
+      });
+      window.console.log("handleStartTime - filterRecordEvent "+JSON.stringify(filterRecordEvent));
+      this.recordToDisplay=filterRecordEvent;
+      window.console.log("handleStartTime - recordToDisplay "+JSON.stringify(filterRecordEvent));
     }
 
 }
