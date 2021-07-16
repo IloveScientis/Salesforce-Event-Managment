@@ -1,14 +1,4 @@
-/**
- * @File Name          : CustomSearchController.cls
- * @Description        : 
- * @Author             : Amit Singh (SFDCPanther)
- * @Group              : 
- * @Last Modified By   : Amit Singh (SFDCPanther)
- * @Last Modified On   : 5/31/2020, 10:37:01 PM
- * @Modification Log   : 
- * Ver       Date            Author      		    Modification
- * 1.0    5/31/2020   Amit Singh (SFDCPanther)     Initial Version
-**/
+
 public with sharing class CustomSearchController {
     
     @AuraEnabled
