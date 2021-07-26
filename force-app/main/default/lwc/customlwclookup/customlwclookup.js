@@ -1,14 +1,4 @@
-/**
- * @File Name          : customlwclookup.js
- * @Description        : 
- * @Author             : A Singh
- * @Group              : 
- * @Last Modified By   : A Singh
- * @Last Modified On   : 6/7/2020, 3:38:26 PM
- * @Modification Log   : 
- * Ver       Date            Author      		    Modification
- * 1.0    6/3/2020   A Singh     Initial Version
-**/
+
 
 import { LightningElement, api, track } from 'lwc';
 import searchRecords from '@salesforce/apex/CustomSearchController.searchRecords';

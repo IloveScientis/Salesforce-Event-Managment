@@ -116,4 +116,18 @@ export default class EventList extends LightningElement {
       window.console.log("handleStartTime - recordToDisplay "+JSON.stringify(filterRecordEvent));
     }
 
+    handleSearch(event){
+      let valuesearch = event.target.value;
+      window.console.log("handleSearch " + valuesearch);
+      let filterSearch = this.result.filter((record,index,arrayobject) => {
+        return record.Location__r.Name.toLowerCase().includes(valuesearch.toLowerCase());
+      });
+      if(valuesearch && valuesearch.length>=2){
+        this.recordToDisplay = filterSearch;
+      }else{
+        this.recordToDisplay = this.result;
+      }
+    }
+
+
 }
